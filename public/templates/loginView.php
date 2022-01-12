@@ -9,8 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public\static\css\connexion.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link rel="shortcut icon" href="../static/images/icon.png">
     <title>Connexion</title>
 </head>
 
@@ -49,10 +47,6 @@
             </div>
         </div>
     </form>
-
-    <script src="../static/js/showPassword.js"></script>
-    <script src="../static/js/login&register.js"></script>
-    <script src="../static/js/popup.js"></script>
 </body>
 
 </html>
