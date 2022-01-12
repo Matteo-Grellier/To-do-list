@@ -1,0 +1,225 @@
+body {
+    font-family: 'Montserrat';
+}
+
+.profil {
+    justify-self: flex-end;
+    font-weight: bold;
+    margin-bottom: 40px;
+    align-self: end;
+}
+
+.to-do-lists {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.scroller {
+    height: 1100px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+
+.one-todo-list {
+    justify-content: top;
+    align-items: center;
+    display: flex;
+    margin-left: 700px;
+    width: 500px;
+    height: 700px;
+    flex-direction: column;
+    margin-right: -200px;
+}
+
+.coller {
+    margin-top: 100px;
+    display: flex;
+}
+
+.tasks-lists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #bfbfbf;
+    width: 800px;
+    border-radius: 10px;
+    height: 100%;
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+.list-title {
+    font-size: 30px;
+}
+
+.list-delete {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.one-task {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 50px;
+    font-size: 60px;
+}
+
+.delete {
+    padding-left: 200px;
+}
+
+.coffee {
+    padding-left: 70px;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 700px;
+    padding-left: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tools-title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.plus {
+    font-weight: bold;
+    font-size: 70px;
+    margin-right: 275px;
+    margin-top: -40px;
+}
+
+.delete-button {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.users {
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.todoListDeleteButton {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.userButton {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    display: none;
+}
+
+.mainPage {
+    margin: 70px auto;
+    height: 500px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 1000px;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.mainPage .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.mainPage .close:hover {
+    color: #06D85F;
+}
+
+.mainPage .header {
+    display: flex;
+    font-weight: bold;
+    height: 100px;
+    margin-top: -20px;
+    margin-right: -20px;
+    margin-left: -20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #6FCBED;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .mainPage {
+        width: 70%;
+    }
+}
+
+.emailInput {
+    font-size: 30px;
+}
+
+.addUser {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.AddUserContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.eachUser {
+    list-style: none;
+    flex: 0 0 33.333333%;
+    padding-bottom: 50px;
+    display: flex;
+    font-size: 50px;
+    height: 50px;
+    justify-content: center;
+}
+
+.AllUsers {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 300px;
+    overflow-y: scroll;
+    justify-content: space-between;
+}
+
+.userPseudo {
+    display: flex;
+    height: 100px;
+}
+
+.deleteUser {
+    margin-left: 50px;
+}

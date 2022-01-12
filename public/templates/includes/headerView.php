@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="logo-element">
+<div class="logo-element" onclick="location.href='/'">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 1000 1000">
         <defs>
             <style>
@@ -37,7 +37,11 @@
     <h3>
         NOM Prénom
     </h3>
-    <img src="public/static/img/person-icon.png">
+    <a href="/login">
+    <img  src="public/static/img/person-icon.png">
+
+
+    </a>
 </div>
 
 <?php $headerContent = ob_get_clean(); ?>
