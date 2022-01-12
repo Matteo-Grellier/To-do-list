@@ -1,0 +1,136 @@
+body {
+    background: #303841;
+    font-family: 'Montserrat';
+}
+
+.connexion {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    visibility: hidden;
+}
+
+#eye {
+    display: none;
+}
+
+#slash {
+    display: initial;
+}
+
+.login-form {
+    position: relative;
+    left: 35px;
+    top: 70px;
+    width: calc(100% - 20px);
+    width: 500px;
+    height: 400px;
+    background-color: #2F3B47;
+    padding: 0px 40px;
+    border-radius: 10%;
+}
+
+.login-form h1 {
+    position: relative;
+    text-align: center;
+    margin: 26px 0;
+    font-size: 48px;
+    color: white;
+    top: -1px;
+}
+
+.textb {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.textb input {
+    width: 80%;
+    height: 70px;
+    border: none;
+    background-color: #ededed;
+    border-radius: 4px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 60px 0 10px;
+}
+
+.placeholder {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    line-height: 70px;
+    top: 0;
+    left: 20px;
+    color: #9d9d9d;
+    user-select: none;
+    pointer-events: none;
+}
+
+.show-password {
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    line-height: 70px;
+    color: #9d9d9d;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.textb input:focus~.placeholder,
+.textb input:valid~.placeholder {
+    left: 10px;
+    top: -16px;
+}
+
+.createAccount {
+    color: white !important;
+}
+
+.login-form a {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 82px;
+    transition: .2s linear;
+}
+
+.button_login .btn {
+    cursor: pointer;
+}
+
+.login-form a:hover {
+    color: #111;
+}
+
+.button_login a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    /* margin-left: 800px; */
+    top: -100px;
+    left: 220px;
+    z-index: 500;
+}
+
+.button_login a i {
+    position: relative;
+    top: 3px;
+}
