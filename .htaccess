@@ -1,0 +1,5 @@
+ReWriteEngine On
+
+ReWriteRule ^home$ public/templates/indexView.php
+ReWriteRule ^login$ public/templates/loginView.php
+ReWriteRule ^register$ public/templates/registerView.php
