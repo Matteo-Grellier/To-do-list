@@ -1,4 +1,6 @@
-<?php $title= "TooDoux List"; ?>
+<?php 
+$title= "TooDoux List"; 
+?>
 
 <?php ob_start(); ?>
 
@@ -7,3 +9,7 @@
 </div>
 
 <?php $mainContent = ob_get_clean(); ?>
+
+<?php
+    include "layout.php";
+?>
