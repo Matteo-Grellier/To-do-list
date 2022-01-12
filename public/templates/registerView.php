@@ -47,7 +47,7 @@
                 </div>
 
 
-                <a class="alreadyRegistered" href="/login">Déjà inscrit ? <br> Connecte-toi</a>
+                <a class="alreadyRegistered" href="/To-do-list/login">Déjà inscrit ? <br> Connecte-toi</a>
                 <div class="button_login">
                     <a class="btn" onclick="formSubmit()">
                             <div class="registerButton">Register</div>

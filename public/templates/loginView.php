@@ -34,7 +34,7 @@
                         <div class="show-password fas fa-eye" id="eye"></div>
                     </span>
                 </div>
-                <a class="createAccount" href="/register">Créer un compte</a>
+                <a class="createAccount" href="/To-do-list/register">Créer un compte</a>
                 <div class="button_login">
                     <a class="btn" onclick="formSubmit()">
                         <span></span>

@@ -21,7 +21,7 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // //display all
 // require("public/templates/layout.php");
 
-if($url == '/') {
+if($url == '/home') {
     //setup the main page
     require("public/templates/indexView.php");
 } else if($url == "/register") {
