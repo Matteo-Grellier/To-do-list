@@ -10,6 +10,7 @@
         <title><?= $title ?></title>
         <!-- <link type="text/css" rel="stylesheet" href="../static/css/style.css"/> -->
         <link type="text/css" rel="stylesheet" href="public/static/css/style.css"/>
+        <link href="public\static\css\index.css" rel="stylesheet" type="text/css">
     </head>
         
     <body>
