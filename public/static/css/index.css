@@ -26,12 +26,13 @@ body {
     text-decoration: underline;
 }
 
-.to-do-lists ul li {
+.to-do-lists ul li a {
+    text-decoration: none;
     cursor: pointer;
     color:rgb(119, 119, 119);
 }
 
-.to-do-lists ul li:hover {
+.to-do-lists ul li a:hover {
     color: var(--dark-blue);
 }
 

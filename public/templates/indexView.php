@@ -1,5 +1,11 @@
 <?php 
-$title= "TooDoux List"; 
+$title= "TooDoux List";
+require("../controllers/classes.php"); 
+require("../controllers/index.php"); 
+$choosenTodo = null;
+    if(isset($_GET['id'])) {
+        $choosenTodo = $getTodoList($_GET['id']);
+    }
 ?>
 
 <?php ob_start(); ?>
@@ -8,17 +14,31 @@ $title= "TooDoux List";
             <div class="by-you">
                 <h3>By You</h3>
                 <ul class="by-you-list-content todolist-tab">
-                    <li>↳Coffee</li>
+                    <?php for($i = 0; $i < count($sessionUser->ownTodoList); ++$i): ?>
+                        <li id=<?= $sessionUser->ownTodoList[$i]->id ?>>
+                            <a href="home?id=<?= $sessionUser->ownTodoList[$i]->id?>">↳<?=$sessionUser->ownTodoList[$i]->name ?></a>
+                        </li>
+                    <?php endfor; ?>
+
+                    <!-- <li>↳Coffee</li>
                     <li>↳Tea</li>
-                    <li>↳Milk</li>
+                    <li>↳Milk</li> -->
                 </ul>
             </div>
             <div class="shared">
                 <h3>Shared with you</h3>
                 <ul class="shared-list-content todolist-tab">
-                    <li><span>↳Coffee<span><span class="shared-owner">by Other</span></li>
+                        
+                    <?php for($i = 0; $i < count($sessionUser->sharedTodoList); ++$i): ?>
+                        <li id=<?= $sessionUser->sharedTodoList[$i]->id ?>>
+                            <a href="home?id=<?= $sessionUser->sharedTodoList[$i]->id?>">↳<?=$sessionUser->sharedTodoList[$i]->name ?></a>
+                            <span class="shared-owner">by <?=$sessionUser->sharedTodoList[$i]->creatorID //il faudra mettre creatorName?></span>
+                        </li>
+                    <?php endfor; ?>
+                    
+                    <!-- <li><span>↳Coffee<span><span class="shared-owner">by Other</span></li>
                     <li><span>↳Tea</span><span class="shared-owner">by Name</span></li>
-                    <li><span>↳Milk</span><span class="shared-owner">by Other</span></li>
+                    <li><span>↳Milk</span><span class="shared-owner">by Other</span></li> -->
                 </ul> 
             </div>
         </div>
@@ -156,34 +176,27 @@ $title= "TooDoux List";
         </div>
 
         <div class="one-todo-list">
-            <h1 class="list-title">nom liste todo</h1>
+            <?php if($choosenTodo != null): ?>
+                <h1 class="list-title"><?=$choosenTodo->name?></h1>
+            <?php else: ?>
+                <h1 class="list-title">Choisissez une Liste</h1>
+            <?php endif; ?>
             <div class="tasks-lists">
-                <!-- a répéter -->
-                <div class="one-task">
-                    <div class="checkbox">✔</div>
-                    <h3>tache 1</h3>
-                    <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
-                </div>
-                <div class="one-task">
-                    <div class="checkbox">✔</div>
-                    <h3>tache 2</h3>
-                    <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
-                </div>
-                <div class="one-task">
-                    <div class="checkbox">✔</div>
-                    <h3>tache 3</h3>
-                    <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
-                </div>
-                <div class="one-task">
-                    <div class="checkbox">✔</div>
-                    <h3>tache 4</h3>
-                    <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
-                </div>
-                <div class="one-task">
-                    <div class="checkbox"></div>
-                    <h3>tache 5</h3>
-                    <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
-                </div>
+                
+                <?php if($choosenTodo != null): ?>
+                    <H3><?= count($choosenTodo->tasks) ?></H3>
+                    <?php foreach($choosenTodo->tasks as $task): ?>
+                        <div class="one-task">
+                            <div class="checkbox">
+                                <?php if($task->isDone): ?>
+                                    <span>✔</span>
+                                <?php endif; ?>
+                            </div>
+                            <h3><?=$task->name?></h3>
+                            <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
 
                 <div class="add-task">
