@@ -1,6 +1,6 @@
 <?php
 
-include 'utils.php';
+// include 'utils.php';
 
 function register(string $emailEntry, string $passwordEntry, string $nameEntry){
 

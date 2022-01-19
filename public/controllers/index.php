@@ -1,6 +1,9 @@
 <?php
 
-    require("../controllers/classes.php"); 
+    require("../controllers/classes.php");
+    require("../../models/tasks.php");
+    require("../../models/todolist.php"); 
+
     // require("../controllers/index.php"); 
 
     // $nameOfActualUser = "";
@@ -149,11 +152,30 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        if(isset($_POST["nameOfTodoList"])) {
+            addToDo($_POST["nameOfTodoList"], $sessionUser->id);
+        } elseif(isset($_POST["deleteToDoList"])) {
+            suppToDo($_POST["deleteToDoList"], $sessionUser->id);
+            // header("Location: ../../home");
+        }
+
+
+
         if(isset($_POST["newTaskContent"])) {
             echo $_POST["newTaskContent"];
             // header("Location:../../home");
-            header("Location:" . $_SERVER['HTTP_REFERER']);
+            AddTask($_GET["id"], $_POST["newTaskContent"]);
+        } elseif(isset($_POST["delete"])) {
+            DeleteTask($_POST["delete"]);
+        } elseif(isset($_POST["isDone"])) {
+            if($_POST["isDone"] == true) {
+                TaskDone($_GET["id"]);
+            } else {
+                TaskNotDone($_GET["id"]);
+            }
         }
+
+        header("Location:" . $_SERVER['HTTP_REFERER']);
 
     }
 

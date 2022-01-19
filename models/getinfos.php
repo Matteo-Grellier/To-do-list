@@ -1,6 +1,6 @@
 <?php
 
-include 'utils.php';
+// include 'utils.php';
 
 //Obtiens les ID et le nom de toutes les listes créées et partagées avec l'utilisateur
 //retourne un tableau qui contient un tableau pour chaque liste avec son ID et son nom

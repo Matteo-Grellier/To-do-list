@@ -43,6 +43,35 @@ body {
     scrollbar-width: thin;
 }
 
+.form-btn-create-todolist {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat';
+}
+
+.form-btn-create-todolist input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+}
+
+.btn-create-todolist {
+    transition: all 0.5s ease-in-out;
+    padding: 5px;
+    color: var(--bg-gray);
+    font-size: 16px;
+    background-color: var(--dark-blue);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-create-todolist:hover {
+    background-color: var(--main-blue); 
+}
+
 .by-you, .shared {
     margin-left: 20px;
 }
@@ -91,9 +120,15 @@ body {
     margin-top: 0;
 }
 
-.list-delete {
+.list-delete button{
+    display: flex;
+    align-items: center;
+    color: var(--dark-blue);
     font-weight: bold;
     font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .one-task {

@@ -1,5 +1,5 @@
 <?php
-
+include '../../models/utils.php';
 require("../../models/getinfos.php"); 
 
 class User {

@@ -1,6 +1,6 @@
 <?php
 
-include 'utils.php';
+// include 'utils.php';
 
 //Ajoute une tâche dans une liste
 function AddTask(int $todolistID, string $taskName){
@@ -30,6 +30,27 @@ function TaskDone(int $taskID){
 
     //Modification de données dans la table
     $sql = "UPDATE task SET isDone = 1 WHERE ID =:taskID ";
+    $reponse = $database->prepare($sql);
+    $reponse->bindValue(':taskID', $taskID, SQLITE3_INTEGER);
+    $result = $reponse->execute();
+
+    //vérification du fonctionnement
+    if ($reponse === FALSE) {
+        echo "echec de la request";
+    } else {
+        echo "tâche mise à jour";
+    }
+
+    // Deconnexion de la bdd
+    $database = null;
+}
+
+//Marque une tâche comme non fait
+function TaskNotDone(int $taskID){
+    $database = openDatabase();
+
+    //Modification de données dans la table
+    $sql = "UPDATE task SET isDone = 0 WHERE ID =:taskID ";
     $reponse = $database->prepare($sql);
     $reponse->bindValue(':taskID', $taskID, SQLITE3_INTEGER);
     $result = $reponse->execute();

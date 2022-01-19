@@ -12,6 +12,10 @@ $choosenTodo = null;
 <?php ob_start(); ?>
     <div class="coller">
         <div class="to-do-lists scroller">
+            <form action="./public/controllers/index.php" method="post" class="form-btn-create-todolist">
+                <input type="text" name="nameOfTodoList" placeholder="Create TodoList">
+                <button type="submit" class="btn-create-todolist">Create</button>
+            </form>
             <div class="by-you">
                 <h3>By You</h3>
                 <ul class="by-you-list-content todolist-tab">
@@ -188,36 +192,48 @@ $choosenTodo = null;
                     <H3><?= count($choosenTodo->tasks) ?></H3>
                     <?php foreach($choosenTodo->tasks as $task): ?>
                         <div class="one-task">
-                            <div class="checkbox">
-                                <?php if($task->isDone): ?>
-                                    <span>✔</span>
-                                <?php endif; ?>
-                            </div>
+                            <form action="./public/controllers/index.php?id=<?=$task->id?>" method="post">
+                                <button class="checkbox" type="submit" name="isDone" value="<?=!$task->isDone?>">
+                                    <?php if($task->isDone): ?>
+                                        <span>✔</span>
+                                    <?php endif; ?>
+                                </button>
+                            </form>
+
                             <h3><?=$task->name?></h3>
-                            <div class="delete"><button class="delete-button"><img src="public\static\img\bin-light-red.png" width="40px"></img></button></div>
+                            <form action="./public/controllers/index.php" method="post" class="delete">
+                                <button class="delete-button" type="submit" name="delete" value="<?=$task->id?>">
+                                    <img src="public\static\img\bin-light-red.png" width="40px"></img>
+                                </button>
+                            </form>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
 
-
-                <form action="./public/controllers/index.php" method="post" class="add-task">
+                <?php if($choosenTodo != null): ?>
+                <form action="./public/controllers/index.php?id=<?=$choosenTodo->id?>" method="post" class="add-task">
                     <input class="content-new-task" type="text" name="newTaskContent">
                     <input class="submit-task" type="submit" name="newTask" value="+">
                 </form>
-
+                <?php endif; ?>
             </div>
 
         </div>
         <div class="tools">
+            <?php if($choosenTodo != null): ?>
             <h3 class="tools-title">Tools</h3>
             <div class="users tools-btn" onclick="on()">
                 <img src="public\static\img\share-dark-blue.png" width="30px"></img>
                 <span>User</span>
             </div>
-            <div class="list-delete tools-btn">
-                <img src="public\static\img\bin-dark-blue.png" width="30px"></img>
-                <span>Delete</span>
-            </div>
+            
+            <form action="./public/controllers/index.php" method="post" class="list-delete tools-btn">
+                <button type="submit" name="deleteToDoList" value="<?=$choosenTodo->id?>">
+                    <img src="public\static\img\bin-dark-blue.png" width="30px"></img>
+                    <span>Delete</span>
+                </button>
+            </form>
+            <?php endif; ?>
         </div>
     </div>
 
