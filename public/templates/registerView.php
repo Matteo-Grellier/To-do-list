@@ -13,24 +13,37 @@
 </head>
 
 <body>
-    {{template "sidebar"}} {{template "header"}}
-    <form action="/inscription" method="POST" id="form">
+
+
+
+
+    <?php
+        require('../controllers/register.php');
+        if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])){
+            register($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password']);
+        }
+    ?>
+
+
+
+
+    <form action="/to-do-list/register" method="POST" id="form">
         <div class="connexion">
             <div class="login-form">
                 <h1>Inscription</h1>
                 <div class="textb">
 
-                    <input type="text" name="Pseudo" required value=>
+                    <input type="text" name="username" required>
 
                     <div class="placeholder">Pseudo</div>
                 </div>
                 <div class="textb">
-                    <input type="text" name="Email" required value=> 
+                    <input type="text" name="email" required value=> 
 
                     <div class="placeholder">Email</div>
                 </div>
                 <div class="textb">
-                    <input type="password" required id="myInput" name="Password">
+                    <input type="password" required id="myInput" name="password">
                     <div class="placeholder">Mot de passe</div>
                     <span onclick="showPassword()">
                         <div class="show-password fas fa-eye-slash" id="slash"></div>
@@ -46,18 +59,20 @@
                     </span>
                 </div>
 
+                <div class="LogReg">
 
-                <a class="alreadyRegistered" href="/To-do-list/login">Déjà inscrit ? <br> Connecte-toi</a>
-                <div class="button_login">
-                    <a class="btn" onclick="formSubmit()">
-                            <div class="registerButton">Register</div>
-                        <i class='bx bxs-user-account'></i>
-                    </a>
+                    <a class="alreadyRegistered" href="/To-do-list/login">Déjà inscrit ? <br> Connecte-toi</a>
+                    <div class="button_login">
+                    <input class="btn" type="submit" name="submit" value="Register">
+                            <i class='bx bxs-user-account'></i>
+                        </a>
+                    </div>
                 </div>
 
             </div>
         </div>
     </form>
+    
 </body>
 
 </html>
@@ -67,4 +82,3 @@
 <?php
     include "layout.php";
 ?>
-

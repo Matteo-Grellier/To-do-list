@@ -37,7 +37,6 @@
     <h3>
         NOM Prénom
     </h3>
-    
     <img  src="public/static/img/person-icon.png">
 </div>
 

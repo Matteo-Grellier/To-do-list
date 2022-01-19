@@ -13,21 +13,21 @@
 </head>
 
 <body>
-    {{template "sidebar"}} {{template "header"}}
 
-    
-    <form action="/connexion" method="POST" id="form">
+  
+
+    <form action="/to-do-list/login" method="POST" id="form" name="login">
         <div class="connexion">
             <div class="login-form">
                 <h1>Connexion</h1>
 
                 <div class="textb">
-                    <input type="username" name="Pseudo" required>
+                    <input type="username" name="username" required>
                     <div class="placeholder">Pseudo</div>
                 </div>
                 <div class="textb">
                     <label for="Password"></label>
-                    <input type="password" required id="myInput" name="Password">
+                    <input type="password" id="myInput" name="Password" required>
                     <div class="placeholder">Mot de passe</div>
                     <span onclick="showPassword()">
                         <div class="show-password fas fa-eye-slash" id="slash"></div>
@@ -47,13 +47,18 @@
             </div>
         </div>
     </form>
+    <script src="public\static\js\login.js"></script>
+
 </body>
+
+
 
 </html>
 
 <?php $mainContent = ob_get_clean(); ?>
 
 <?php
+
     include "layout.php";
 ?>
 
