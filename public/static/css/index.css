@@ -184,7 +184,7 @@ body {
     align-items: center;
 }
 
-.add-task input {
+.add-task .content-new-task {
     font-family: "Montserrat";
     font-weight: 500;
     padding: 5px;
@@ -196,10 +196,13 @@ body {
     margin-right: 40%;
 }
 
-.add-task h3 {
+.add-task .submit-task {
     font-weight: 500;
     font-size: 34px;
+    font-family: "Montserrat";
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .delete-button {

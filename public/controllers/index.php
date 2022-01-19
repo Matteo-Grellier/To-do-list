@@ -1,5 +1,8 @@
 <?php
 
+    require("../controllers/classes.php"); 
+    // require("../controllers/index.php"); 
+
     // $nameOfActualUser = "";
 
 
@@ -142,6 +145,16 @@
         }
 
         // return $allTodos[$id];
+    };
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        if(isset($_POST["newTaskContent"])) {
+            echo $_POST["newTaskContent"];
+            // header("Location:../../home");
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
+
     }
 
 ?>

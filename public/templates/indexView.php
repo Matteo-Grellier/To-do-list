@@ -1,6 +1,6 @@
 <?php 
 $title= "TooDoux List";
-require("../controllers/classes.php"); 
+// require("../controllers/classes.php"); 
 require("../controllers/index.php"); 
 
 $choosenTodo = null;
@@ -200,10 +200,10 @@ $choosenTodo = null;
                 <?php endif; ?>
 
 
-                <div class="add-task">
-                    <input type="text">
-                    <h3>+</h3>
-                </div>
+                <form action="./public/controllers/index.php" method="post" class="add-task">
+                    <input class="content-new-task" type="text" name="newTaskContent">
+                    <input class="submit-task" type="submit" name="newTask" value="+">
+                </form>
 
             </div>
 
