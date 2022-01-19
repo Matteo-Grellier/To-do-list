@@ -1,2 +1,6 @@
 /todoList.sqlite3
 nocommit/
+public/static/js
+public/static/.vscode/
+
+/vendor/

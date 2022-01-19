@@ -16,6 +16,7 @@ body {
 
 .alreadyRegistered {
     color: white !important;
+    padding-right: 200px;
 }
 
 #eye {
@@ -142,4 +143,15 @@ body {
 
 .erreurs {
     z-index: 500;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    font-size: 4vh;
+    color: white;
+}
+
+.LogReg {
+    display: flex;
 }
