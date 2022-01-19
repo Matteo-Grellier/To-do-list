@@ -1,5 +1,7 @@
 <?php
 
+require("../../models/getinfos.php"); 
+
 class User {
     public int $id;
     public string $name;
@@ -17,16 +19,35 @@ class User {
         $this->separateTodoList();
     }
 
+    // function separateTodoList() {
+
+    //     $todoListsOfActualUser = [[1, "Courses", 0],[0, "Chose à payer", 1],[0,"Chose à faire", 2]];
+
+    //     //get basic information of all todo : name, creator and id (id to get all tasks later)
+    //     foreach($todoListsOfActualUser as $information) { //$information : [$creator, $name, $idTodo]
+            
+    //         $idOfCreator = $information[0];
+    //         $nameOfTodoList = $information[1];
+    //         $idOfTodoList = $information[2];
+            
+    //         if($this->id == $idOfCreator) {
+    //             array_push($this->ownTodoList, new ToDoList($idOfTodoList, $nameOfTodoList, $idOfCreator));
+    //         } else {
+    //             array_push($this->sharedTodoList, new ToDoList($idOfTodoList, $nameOfTodoList, $idOfCreator));//changer idOfCreator par nameOfCreator
+    //         }
+    //     }
+    // }
+
     function separateTodoList() {
 
-        $todoListsOfActualUser = [[1, "Courses", 0],[0, "Chose à payer", 1],[0,"Chose à faire", 2]];
+        // $todoListsOfActualUser = [[1, "Courses", 0],[0, "Chose à payer", 1],[0,"Chose à faire", 2]];
 
         //get basic information of all todo : name, creator and id (id to get all tasks later)
-        foreach($todoListsOfActualUser as $information) { //$information : [$creator, $name, $idTodo]
+        foreach(GetLists($this->id) as $information) { //$information : [$creator, $name, $idTodo]
             
-            $idOfCreator = $information[0];
-            $nameOfTodoList = $information[1];
-            $idOfTodoList = $information[2];
+            $idOfCreator = $information["creatorID"];
+            $nameOfTodoList = $information["name"];
+            $idOfTodoList = $information["ID"];
             
             if($this->id == $idOfCreator) {
                 array_push($this->ownTodoList, new ToDoList($idOfTodoList, $nameOfTodoList, $idOfCreator));
@@ -58,10 +79,10 @@ class ToDoList {
             $notExist = true;
 
             foreach($this->tasks as $task) {
-                if($newTask[0] == $task->id) { //si l'id de la nouvelle tache est egal a celui de la tache actuelle alors :
+                if($newTask["ID"] == $task->id) { //si l'id de la nouvelle tache est egal a celui de la tache actuelle alors :
                     
-                    $task->name = $newTask[1];
-                    $task->isDone = $newTask[2];
+                    $task->name = $newTask["name"];
+                    $task->isDone = $newTask["isDone"];
                     
                     $notExist = false;
                     break;
@@ -71,7 +92,7 @@ class ToDoList {
             }
 
             if($notExist) {
-                array_push($this->tasks, new Task($newTask[0],$newTask[1],$newTask[2]));
+                array_push($this->tasks, new Task($newTask["ID"],$newTask["name"],$newTask["isDone"]));
             }
         }
 

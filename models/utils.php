@@ -1,7 +1,7 @@
 <?php
 
 function openDatabase():SQLite3 {
-    $base = 'todoList.sqlite3';
+    $base = '../../models/todoDatabase.sqlite3';
     try{
         $bd = new SQLite3($base);
     } catch(SQLiteException $e){

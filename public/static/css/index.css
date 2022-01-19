@@ -111,7 +111,7 @@ body {
     font-weight: 500;
     color: var(--dark-blue);
     margin-right: 60%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .one-task img {

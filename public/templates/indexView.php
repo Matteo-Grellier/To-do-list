@@ -2,6 +2,7 @@
 $title= "TooDoux List";
 require("../controllers/classes.php"); 
 require("../controllers/index.php"); 
+
 $choosenTodo = null;
     if(isset($_GET['id'])) {
         $choosenTodo = $getTodoList($_GET['id']);
