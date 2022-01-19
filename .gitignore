@@ -1,10 +1,4 @@
 /todoList.sqlite3
-<<<<<<< HEAD
-nocommit/
-=======
 nocommit/
 public/static/js
 public/static/.vscode/
-
-/vendor/
->>>>>>> 0ed9e21564e0f0a6490ace45d57334d7aeed20d3
