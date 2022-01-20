@@ -11,6 +11,7 @@
         <link type="text/css" rel="stylesheet" href="public/static/css/style.css"/>
         <link href="public\static\css\index.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="public\static\css\register.css">
+        <link rel="icon" href="./public/static/img/logo_gray.png" />
     </head>
         
     <body>
