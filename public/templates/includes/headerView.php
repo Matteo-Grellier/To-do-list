@@ -35,7 +35,7 @@
 </div>
 <div class="user-element" onclick="location.href='./login'" style="cursor: pointer">
     <h3>
-        NOM Prénom
+        <?php echo $_SESSION['name']?>
     </h3>
     
     <img  src="public/static/img/person-icon.png">

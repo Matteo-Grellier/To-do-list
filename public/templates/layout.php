@@ -1,4 +1,7 @@
 <?php
+    session_start();
+?>
+<?php
     require("includes/headerView.php");
     require("includes/footerView.php");
 ?>
@@ -11,6 +14,8 @@
         <!-- <link type="text/css" rel="stylesheet" href="../static/css/style.css"/> -->
         <link type="text/css" rel="stylesheet" href="public/static/css/style.css"/>
         <link href="public\static\css\index.css" rel="stylesheet" type="text/css">
+        <link href="public\static\css\connexion.css" rel="stylesheet" type="text/css">
+
     </head>
         
     <body>

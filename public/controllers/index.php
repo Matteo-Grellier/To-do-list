@@ -1,4 +1,14 @@
 <?php
+    session_start();
+?>
+<?php
+    if(isset($_SESSION['ID'])){
+        $sessionUser = new User($_SESSION['ID'], $_SESSION['name'], $_SESSION['email']);
+    } else{
+        header("Location:../../login");
+        // $sessionUser = new User(1, "berber", "ber@gmail.com");
+    }
+
 
     // $nameOfActualUser = "";
 
@@ -78,7 +88,6 @@
 
     // require("../../models/getinfos.php");
 
-    $sessionUser = new User(3, "Bernard", "berber@ymail.com");
 
     // $getTodoList = function($id) use ($sessionUser) {
     //     // require("./classes.php");
