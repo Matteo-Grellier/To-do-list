@@ -109,25 +109,6 @@ function getCollabs(int $todoID){
     return $allNames;
 }
 
-function getName(int $userID){
-    $database = openDatabase();
-
-    $sql = "SELECT name FROM user WHERE ID=:userID;";
-    $reponse = $database->prepare($sql);
-    $reponse->bindValue(':userID', $userID, SQLITE3_TEXT);
-    $result = $reponse->execute();
-
-    if ($reponse === FALSE) {
-        echo "echec de la request";
-    } else {
-        return $result->fetchArray()['name'];
-    }
-
-    $database = null;
-
-    return $data;
-}
-
 // Choisir avec quoi on va récupérer nos infos : avec l'ID ou avec le mail
 function GetInfosUser(string $emailUser = null, int $userID = null){
     $database = openDatabase();
