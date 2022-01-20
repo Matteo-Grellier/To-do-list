@@ -57,125 +57,30 @@ $choosenTodo = null;
                 </div>
                 <div class="AddUserContainer">
                     <div>
-                        <input class="emailInput" name="Adresse Email">
-                        
+                    <form method="POST">
+                        <input placeholder="Email" class="emailInput" name="emailCollaborator" >
                         </input>
                     </div>
                     <div>
                         <button class="addUser" type="submit">Add User</button>
                     </div>
+                    </form>
                 </div>
                 <div class="AllUsers">
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
+                    <?php foreach($choosenTodo->collaborators as $collaborator): ?>
+
+                        <form method="POST">
+                        <div class="eachUser">
+                        <div class="userPseudo"><?=$collaborator["name"]?></div>
+                            <input name="suppCollab" value="<?=$collaborator["email"]?>" hidden>
+                        <div class="deleteUser">
+                            <button type="submit" class="delete-button">
+                            <img src="public\static\img\cross.png" width="50px">
+                            </button>
+                        </div>
+                        </form>
                     </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">JHON</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">BOB</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">JHON</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
-                    <div class="eachUser">
-                        <div class="userPseudo">DEDE</div>
-                        <div class="deleteUser"><button class="delete-button"><img src="public\static\img\cross.png" width="50px"></button></div>
-                        
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
