@@ -1,6 +1,4 @@
 <?php
-// include 'openDataBase.php';
-// include 'utils.php';
 
 function addToDo(string $nameEntry, int $creatorID){
     $bd = openDataBase();
@@ -16,7 +14,6 @@ function addToDo(string $nameEntry, int $creatorID){
     echo('La To Do List a bien été créée.');
 }
 
-// addToDo("Cuisine ", 1);
 
 function suppToDo(int $todoListID, int $creatorID){
     $bd = openDataBase();
@@ -36,8 +33,6 @@ function suppToDo(int $todoListID, int $creatorID){
     $bd=null;
 }
 
-// suppTodo(2, 1);
-
 function addCollab(int $creatorID, int $todoListID, string $collabEmail,){
     $bd = openDataBase();
     $statement = $bd->prepare("SELECT creatorID FROM todoList WHERE ID = :todoListID");
@@ -46,7 +41,9 @@ function addCollab(int $creatorID, int $todoListID, string $collabEmail,){
     if(($result->fetchArray())[0] == $creatorID){
         echo "Vous êtes bien le créateur de cette liste !\n";
         $collabID = checkEmail($collabEmail);
-        if($collabID){
+        if($collabID==$creatorID){
+            echo("Vous ne pouvez pas vous ajouter vous même.");
+        }elseif($collabID){
             $statement = $bd->prepare("INSERT INTO userID_todoID (todoID, userID)"." VALUES (:todoListID, :collabID)");
             $statement->bindValue(':todoListID', $todoListID);
             $statement->bindValue(':collabID', $collabID);
@@ -62,9 +59,8 @@ function addCollab(int $creatorID, int $todoListID, string $collabEmail,){
     $bd=null;
 }
 
-// addCollab(1, 3, "renaud.jag@gmail.com");
 
-function suppCollab(int $creatorID, string $collabEmail, int $todoListID){
+function suppCollab(int $creatorID, int $todoListID, string $collabEmail){
     $bd = openDataBase();
     $statement = $bd->prepare("SELECT creatorID FROM todoList WHERE ID = :todoListID");
     $statement->bindValue(':todoListID', $todoListID);
@@ -72,7 +68,6 @@ function suppCollab(int $creatorID, string $collabEmail, int $todoListID){
     if(($result->fetchArray())[0] == $creatorID){
         echo "Vous êtes bien le créateur de cette liste !\n";
         $collabID = checkEmail($collabEmail);
-
         if($collabID){
             $statement = $bd->prepare("DELETE FROM userID_todoID WHERE userID = :collabID AND todoID = :todoListID");
             $statement->bindValue(':todoListID', $todoListID);
@@ -89,8 +84,5 @@ function suppCollab(int $creatorID, string $collabEmail, int $todoListID){
     $bd=null;
 }
 
-// suppCollab(1, "renaud.jaguelin\@gmail.com", 3);
-
-// checkEmail("renaud.jaguelin\@gmail.com")
 
 ?>

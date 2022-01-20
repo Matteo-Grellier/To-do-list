@@ -63,12 +63,15 @@ class ToDoList {
     public string $name;
     public int $creatorID;
 
+    public $collaborators = [];
+
     public $tasks = [];
 
     function __construct($id, $name, $creatorID) {
         $this->id = $id;
         $this->name = $name;
         $this->creatorID = $creatorID;
+        $this->collaborators = getCollabs($this->id);
     }
 
     function updateTasks($newTasks) {
@@ -115,8 +118,8 @@ class ToDoList {
         // if($notExist) {
         //     array_push($this->tasks, new Task($newTasks[0],$newTasks[1],$newTasks[2]));
         // }
-
     }
+    
 }
 
 class Task {

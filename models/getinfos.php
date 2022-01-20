@@ -73,16 +73,39 @@ function GetTasks(int $todolistID){
     return $data;
 }
 
-// foreach (GetLists(2) as $row) {
-//     foreach ($row as $yes) {
-//         echo "\n" . $yes;
-//     }
-// }
+function getCollabs(int $todoID){
+    $database = openDatabase();
 
-// foreach (GetTasks(1) as $row) {
-//     foreach ($row as $yes) {
-//         echo "\n" . $yes;
-//     }
-// }
+    // récuperer les données 
+    $sql = "SELECT userID FROM userID_todoID WHERE todoID=:todoID;";
+    $reponse = $database->prepare($sql);
+    $reponse->bindValue(':todoID', $todoID, SQLITE3_TEXT);
+    $result = $reponse->execute();
+
+    //si la request à fonctionné, remplir un tableau avec les resultats
+    if ($reponse === FALSE) {
+        echo "echec de la request";
+    } else {       
+        $data = array();
+        while($test = $result->fetchArray(1)) {
+            array_push($data, $test);
+        }
+    }
+    
+    $allNames = array();
+    for($i = 0; $i < count($data);++$i){
+        $sql = "SELECT name, email FROM user WHERE ID=:userID;";
+        $reponse = $database->prepare($sql);
+        $reponse->bindValue(':userID', $data[$i]["userID"], SQLITE3_TEXT);
+        $result = $reponse->execute();
+        array_push($allNames, $result->fetchArray());
+    }
+
+    // Deconnexion de la bdd
+    $database = null;
+
+    return $allNames;
+}
+
 
 ?>

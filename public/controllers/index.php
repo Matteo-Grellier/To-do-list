@@ -175,6 +175,14 @@
             }
         }
 
+        if(isset($_POST["emailCollaborator"])){
+            addCollab($sessionUser->id, $_GET["id"], $_POST["emailCollaborator"]);
+        }
+
+        if(isset($_POST["suppCollab"])){
+            suppCollab($sessionUser->id, $_GET["id"], $_POST["suppCollab"]);
+        }
+
         header("Location:" . $_SERVER['HTTP_REFERER']);
 
     }
