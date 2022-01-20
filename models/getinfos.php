@@ -1,7 +1,5 @@
 <?php
 
-// include 'utils.php';
-
 //Obtiens les ID et le nom de toutes les listes créées et partagées avec l'utilisateur
 //retourne un tableau qui contient un tableau pour chaque liste avec son ID et son nom
 function GetLists(int $userID){
@@ -14,7 +12,11 @@ function GetLists(int $userID){
     $result = $reponse->execute();
 
     // récuperer les to do lists partagées
-    $sql = "SELECT ID, name, creatorID FROM todoList WHERE ID = ( SELECT todoID  FROM userID_todoID WHERE userID=:id ) ;";
+    $sql = "SELECT ID, name, creatorID FROM todoList 
+    INNER JOIN userID_todoID
+    ON todoList.ID = userID_todoID.todoID
+    WHERE userID_todoID.userID = :id;";
+
     $reponse2 = $database->prepare($sql);
     $reponse2->bindValue(':id', $userID, SQLITE3_TEXT);
     $result2 = $reponse2->execute();
@@ -105,6 +107,57 @@ function getCollabs(int $todoID){
     $database = null;
 
     return $allNames;
+}
+
+function getName(int $userID){
+    $database = openDatabase();
+
+    $sql = "SELECT name FROM user WHERE ID=:userID;";
+    $reponse = $database->prepare($sql);
+    $reponse->bindValue(':userID', $userID, SQLITE3_TEXT);
+    $result = $reponse->execute();
+
+    if ($reponse === FALSE) {
+        echo "echec de la request";
+    } else {
+        return $result->fetchArray()['name'];
+    }
+
+    $database = null;
+
+    return $data;
+}
+
+// Choisir avec quoi on va récupérer nos infos : avec l'ID ou avec le mail
+function GetInfosUser(string $emailUser = null, int $userID = null){
+    $database = openDatabase();
+
+    if($emailUser==null){
+        $sql = "SELECT ID, email, name FROM user WHERE ID=:userID;";
+        $reponse = $database->prepare($sql);
+        $reponse->bindValue(':userID', $userID, SQLITE3_TEXT);
+    } else {
+        $sql = "SELECT ID, email, name FROM user WHERE email=:emailUser;";
+        $reponse = $database->prepare($sql);
+        $reponse->bindValue(':emailUser', $emailUser, SQLITE3_TEXT);
+    }
+    
+    $result = $reponse->execute();
+
+    if ($reponse === FALSE) {
+        echo "echec de la request";
+    } else {        
+        $data = array();
+
+        while($test = $result->fetchArray(1)) {
+            array_push($data, $test);
+        }
+    }
+
+    // Deconnexion de la bdd
+    $database = null;
+
+    return $data;
 }
 
 

@@ -26,6 +26,11 @@ function suppToDo(int $todoListID, int $creatorID){
         $statement->bindValue(':todoListID', $todoListID);
         $returned_set = $statement->execute();
         echo("La ToDo list a été supprimée.");
+
+        //Supprimer les tâches liées
+        $statement = $bd->prepare("DELETE FROM task WHERE listID=:todoListID");
+        $statement->bindValue(':todoListID', $todoListID);
+        $returned_set = $statement->execute();
         $statement->close();
     } else{
         echo "Vous ne pouvez pas supprimer cette todoList car vous n'êtes pas le créateur\n";
@@ -33,7 +38,7 @@ function suppToDo(int $todoListID, int $creatorID){
     $bd=null;
 }
 
-function addCollab(int $creatorID, int $todoListID, string $collabEmail,){
+function addCollab(int $creatorID, int $todoListID, string $collabEmail){
     $bd = openDataBase();
     $statement = $bd->prepare("SELECT creatorID FROM todoList WHERE ID = :todoListID");
     $statement->bindValue(':todoListID', $todoListID);

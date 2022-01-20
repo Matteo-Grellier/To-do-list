@@ -1,4 +1,5 @@
 <?php
+$title= "Login";
  require("../controllers/login.php");
 ?>
 <?php ob_start(); 
@@ -9,7 +10,7 @@
         </form>
         
 <?php else:?>
-    <form action="./public/controllers/login.php" method="POST" id="form">
+    <form method="POST" id="form">
         <div class="connexion">
             <div class="login-form">
                 <h1>Connexion</h1>
@@ -27,21 +28,22 @@
                 <button type='submit' class="button_login">
                     Login
                 </button>
+
+                <?php if(isset($_GET["Erreur"])): ?>
+                    <?php if($_GET["Erreur"]==1):?>
+                        <div class="errors" >MOT DE PASSE INCORRECT</div>
+                    <?php elseif($_GET["Erreur"]==2):?>
+                        <div class="errors">MAIL NON TROUVÉ</div>
+                    <?php else: ?>
+                        <div class="errors">Il y a une erreur</div>
+                    <?php endif; ?>
+                <?php endif; ?>
+
             </div>
         </div>
 
     </form>
-    <?php if(isset($_GET["Erreur"])): ?>
-        <?php if($_GET["Erreur"]==null):?>
-                <p>pas d'erreur</p>
-        <?php elseif($_GET["Erreur"]==1):?>
-            <p>MOT DE PASSE INCORRECT</p>
-        <?php elseif($_GET["Erreur"]==2):?>
-            <p>MAIL NON TROUVÉ</p>
-        <?php else: ?>
-            <p><?=$_GET["Erreur"]?></p>
-        <?php endif; ?>
-    <?php endif; ?>
+    
 
 
 <?php endif;?>
