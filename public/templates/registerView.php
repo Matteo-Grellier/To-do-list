@@ -8,7 +8,6 @@
     }
 ?>
 
-
 <form action="/to-do-list/register" method="POST" id="form">
     <div class="connexion">
         <div class="login-form">

@@ -8,12 +8,9 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
-        <!-- <link type="text/css" rel="stylesheet" href="../static/css/style.css"/> -->
         <link type="text/css" rel="stylesheet" href="public/static/css/style.css"/>
         <link href="public\static\css\index.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="public\static\css\register.css">
-        <!-- <link href="public\static\css\connexion.css" rel="stylesheet" type="text/css"> -->
-
     </head>
         
     <body>

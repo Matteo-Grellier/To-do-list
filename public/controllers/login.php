@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['ID'] = $userInfos[0]["ID"];
             $_SESSION['email'] = $userInfos[0]["email"];
             header("Location:../../home");
-            // header("Location:../../login". "?Erreur=". $Name);
 
         } else{
             header("Location:./login". "?Erreur=" . $Erreur);
@@ -31,10 +30,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 }
-
-
-
-// $userName = $_POST['Pseudo'];
-// $password = $_POST['Password'];
 
 ?>
