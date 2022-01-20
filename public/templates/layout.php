@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="public/static/css/style.css"/>
         <link href="public\static\css\index.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="public\static\css\register.css">
-        <link href="public\static\css\connexion.css" rel="stylesheet" type="text/css">
+        <!-- <link href="public\static\css\connexion.css" rel="stylesheet" type="text/css"> -->
 
     </head>
         

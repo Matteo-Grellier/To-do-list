@@ -3,6 +3,29 @@ body {
     font-family: 'Montserrat';
 }
 
+.deconnexion-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deconnexion-btn button {
+    transition: all 0.5s ease-in-out;
+    margin-top: 240px;
+    background: var(--dark-blue);
+    border: none;
+    font-family: "Montserrat";
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--bg-gray);
+}
+
+.deconnexion-btn button:hover {
+    background: var(--main-blue);
+
+}
+
 .connexion {
     min-height: 100vh;
     display: flex;
@@ -14,22 +37,14 @@ body {
     visibility: hidden;
 }
 
-.alreadyRegistered {
+.alreadyRegistered, .createAccount {
     color: var(--bg-gray) !important;
     padding-right: 200px;
 }
 
-.alreadyRegistered:hover {
+.alreadyRegistered:hover, .createAccount:hover {
     color: var(--main-blue) !important;
 
-}
-
-#eye {
-    display: none;
-}
-
-#slash {
-    display: initial;
 }
 
 .login-form {
@@ -61,13 +76,13 @@ body {
 .textb input {
     width: 100%;
     height: 50px;
-    border: none;
+    border: 3px solid var(--main-blue);
     background-color: var(--bg-gray);
-    border-radius: 6px;
-    color: #333;
+    border-radius: 15px;
+    color: rgb(82, 82, 82);
     font-size: 18px;
     font-weight: 700;
-    padding:10px 0;
+    padding:10px 2px;
 }
 
 .placeholder {
@@ -111,7 +126,7 @@ body {
     color: #555;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
     transition: .2s linear;
 }
 
@@ -119,31 +134,16 @@ body {
     color: #111;
 }
 
-.button_login a {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-size: 24px;
-    overflow: hidden;
-    transition: 0.2s;
-    /* margin-left: 800px; */
-    top: -100px;
-    left: 220px;
-    z-index: 500;
+.button_login {
+    font-family: "Montserrat";
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: var(--bg-gray);
 }
 
-.button_login a i {
-    position: relative;
-    top: 3px;
-}
-
-.button_login a span {
-    position: absolute;
-    display: block;
+.button_login:hover {
+    color: var(--main-blue);
 }
 
 .erreurs {

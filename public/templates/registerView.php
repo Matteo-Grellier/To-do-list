@@ -30,8 +30,6 @@
                 <a class="alreadyRegistered" href="./login">Déjà inscrit ? <br> Connecte-toi</a>
                 <div class="button_login">
                 <input class="btn" type="submit" name="submit" value="Register">
-                        <i class='bx bxs-user-account'></i>
-                    </a>
                 </div>
             </div>
 

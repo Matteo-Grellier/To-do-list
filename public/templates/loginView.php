@@ -4,7 +4,7 @@
 <?php ob_start(); 
 ?>
 <?php if(isset($_SESSION['ID'])):?>
-        <form method="POST">
+        <form class="deconnexion-btn" method="POST">
         <button type="submit" name="deconnexion">Déconnexion</button>
         </form>
         
@@ -22,32 +22,13 @@
                     <label for="Password"></label>
                     <input type="password" id="myInput" name="Password" required>
                     <div class="placeholder">Mot de passe</div>
-                    <span onclick="showPassword()">
-                        <div class="show-password fas fa-eye-slash" id="slash"></div>
-                        <div class="show-password fas fa-eye" id="eye"></div>
-                    </span>
                 </div>
                 <a class="createAccount" href="./register">Créer un compte</a>
                 <button type='submit' class="button_login">
-                    <a class="btn">        
-                            TEST
-                            </a>
-                        <i class='bx bxs-log-in'></i>
+                    Login
                 </button>
-                <!-- <div class="button_login">
-                    <a class="btn" onclick="formSubmit()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span> Login
-                        <i class='bx bxs-log-in'></i>
-                    </a>
-                </div> -->
-
             </div>
         </div>
-        <!-- <input type='submit'>LOGIN</input> -->
-
 
     </form>
     <?php if(isset($_GET["Erreur"])): ?>
