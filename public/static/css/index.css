@@ -1,318 +1,326 @@
 body {
-    font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 /*  */
 
 .profil {
-    justify-self: flex-end;
-    font-weight: bold;
-    margin-bottom: 40px;
-    align-self: end;
+  justify-self: flex-end;
+  font-weight: bold;
+  margin-bottom: 40px;
+  align-self: end;
 }
 
 .to-do-lists {
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    color: var(--dark-blue);
-    width: 300px;
-    background-color: rgb(238, 238, 238);
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: var(--dark-blue);
+  width: 300px;
+  background-color: rgb(238, 238, 238);
 }
 
 .to-do-lists h3 {
-    font-size: 26px;
-    font-weight: 600;
-    text-decoration: underline;
+  font-size: 26px;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .to-do-lists ul li a {
-    text-decoration: none;
-    cursor: pointer;
-    color:rgb(119, 119, 119);
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(119, 119, 119);
 }
 
 .to-do-lists ul li a:hover {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 
 .scroller {
-    height: 90vh;
-    overflow-y: scroll;
-    scrollbar-color: rgb(138, 138, 138) rgb(221, 221, 221);
-    scrollbar-width: thin;
+  height: 90vh;
+  overflow-y: scroll;
+  scrollbar-color: rgb(138, 138, 138) rgb(221, 221, 221);
+  scrollbar-width: thin;
 }
 
 .form-btn-create-todolist {
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 16px;
-    font-family: 'Montserrat';
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-family: "Montserrat";
 }
 
 .form-btn-create-todolist input {
-    padding: 10px;
-    margin-right: 10px;
-    border: 2px solid var(--dark-blue);
-    border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 10px;
 }
 
 .btn-create-todolist {
-    transition: all 0.5s ease-in-out;
-    padding: 5px;
-    color: var(--bg-gray);
-    font-size: 16px;
-    background-color: var(--dark-blue);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  padding: 5px;
+  color: var(--bg-gray);
+  font-size: 16px;
+  background-color: var(--dark-blue);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .btn-create-todolist:hover {
-    background-color: var(--main-blue); 
+  background-color: var(--main-blue);
 }
 
-.by-you, .shared {
-    margin-left: 20px;
+.by-you,
+.shared {
+  margin-left: 20px;
 }
 
 .shared-owner {
-    margin-left: 5px;
-    color:rgb(190, 190, 190);
-    font-size: 14px;
+  margin-left: 5px;
+  color: rgb(190, 190, 190);
+  font-size: 14px;
 }
 
 .one-todo-list {
-    justify-content: top;
-    align-items: center;
-    display: flex;
-    /* margin-left: 700px; */
-    width: 500px;
-    height: 80%;
-    flex-direction: column;
-    /* margin-right: -200px; */
+  justify-content: top;
+  align-items: center;
+  display: flex;
+  /* margin-left: 700px; */
+  width: 500px;
+  height: 80%;
+  flex-direction: column;
+  /* margin-right: -200px; */
 }
 
 .coller {
-    /* margin-top: 100px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tasks-lists {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ececec;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    /* margin-top: 100px; */
-    /* padding-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ececec;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  /* margin-top: 100px; */
+  /* padding-top: 50px; */
 }
 
 .list-title {
-    font-size: 30px;
-    color: var(--dark-blue);
-    margin-top: 0;
+  font-size: 30px;
+  color: var(--dark-blue);
+  margin-top: 0;
 }
 
-.list-delete button{
-    display: flex;
-    align-items: center;
-    color: var(--dark-blue);
-    font-weight: bold;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
+.list-delete button {
+  display: flex;
+  align-items: center;
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .one-task {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    /* padding-bottom: 50px; */
-    font-size: 32px;
-    width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-bottom: 50px; */
+  font-size: 32px;
+  width: 80%;
+}
+
+.one-task-comp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .one-task h3 {
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--dark-blue);
-    margin-right: 60%;
-    /* margin-left: 20px; */
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--dark-blue);
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: left;
 }
 
 .one-task img {
-    width: 20px;
+  width: 20px;
 }
 
 .one-task .checkbox {
-    width: 23px;
-    height: 23px;
-    border: 2px solid var(--dark-blue);
-    border-radius: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 23px;
+  height: 23px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .delete {
-    /* padding-left: 200px; */
+  /* padding-left: 200px; */
 }
 
 .todolist-tab {
-    margin-left: 10px;
-    list-style-type: none;
+  margin-left: 10px;
+  list-style-type: none;
 }
 
 .todolist-tab li {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .tools {
-    display: flex;
-    flex-direction: column;
-    /* width: 500px; */
-    /* padding-left: 400px; */
-    align-items: flex-start;
-    margin-right: 150px;
-    color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  /* width: 500px; */
+  /* padding-left: 400px; */
+  align-items: flex-start;
+  margin-right: 150px;
+  color: var(--dark-blue);
 }
 
 .tools-title {
-    font-size: 30px;
-    font-weight: 600;
-    text-decoration: underline;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .tools-btn {
-    transition: all 0.5s ease-in-out; 
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .tools-btn span {
-    margin-left: 5px;
-    font-weight: 500;
+  margin-left: 5px;
+  font-weight: 500;
 }
 
 .tools-btn:hover {
-    background-color: rgb(214, 214, 214);
+  background-color: rgb(214, 214, 214);
 }
 
 .add-task {
-    font-weight: bold;
-    font-size: 30px;
-    /* margin-right: 275px; */
-    display: flex;
-    width: 80%;
-    justify-content: flex-end;
-    align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  /* margin-right: 275px; */
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .add-task .content-new-task {
-    font-family: "Montserrat";
-    font-weight: 500;
-    padding: 5px;
-    background-color: var(--bg-gray);
-    border-radius: 10px;
-    border: 2px solid var(--dark-blue);
-    width:70%; 
-    height:20px;
-    margin-right: 40%;
+  font-family: "Montserrat";
+  font-weight: 500;
+  padding: 5px;
+  background-color: var(--bg-gray);
+  border-radius: 10px;
+  border: 2px solid var(--dark-blue);
+  width: 70%;
+  height: 20px;
+  margin-right: 40%;
 }
 
 .add-task .submit-task {
-    font-weight: 500;
-    font-size: 34px;
-    font-family: "Montserrat";
-    cursor: pointer;
-    background: none;
-    border: none;
+  font-weight: 500;
+  font-size: 34px;
+  font-family: "Montserrat";
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .delete-button {
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .users {
-    justify-content: center;
-    font-weight: bold;
-    font-size: 24px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .todoListDeleteButton {
-    padding: 0;
-    border: none;
-    background: transparent;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .userButton {
-    padding: 0;
-    border: none;
-    background: transparent;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  display: none;
 }
 
 .mainPage {
-    margin: 70px auto;
-    height: 500px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    width: 1000px;
-    position: relative;
-    transition: all 5s ease-in-out;
+  margin: 70px auto;
+  height: 500px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 1000px;
+  position: relative;
+  transition: all 5s ease-in-out;
 }
 
 .mainPage .close {
-    position: absolute;
-    top: -3px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 34px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    cursor: pointer;
+  position: absolute;
+  top: -3px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 34px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
 }
 
 .mainPage .close:hover {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
 }
 
 .mainPage .header {
-    display: flex;
-    font-weight: bold;
-    height: 100px;
-    margin-top: -20px;
-    margin-right: -20px;
-    margin-left: -20px;
-    justify-content: center;
-    align-items: center;
-    background-color: #6FCBED;
+  display: flex;
+  font-weight: bold;
+  height: 100px;
+  margin-top: -20px;
+  margin-right: -20px;
+  margin-left: -20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #6fcbed;
 }
 
 /* @media screen and (max-width: 700px) {
@@ -325,45 +333,45 @@ body {
 } */
 
 .emailInput {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .addUser {
-    font-size: 30px;
-    margin-left: 20px;
+  font-size: 30px;
+  margin-left: 20px;
 }
 
 .AddUserContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .eachUser {
-    list-style: none;
-    flex: 0 0 33.333333%;
-    padding-bottom: 50px;
-    display: flex;
-    font-size: 50px;
-    height: 50px;
-    justify-content: center;
+  list-style: none;
+  flex: 0 0 33.333333%;
+  padding-bottom: 50px;
+  display: flex;
+  font-size: 50px;
+  height: 50px;
+  justify-content: center;
 }
 
 .AllUsers {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 1000px;
-    height: 300px;
-    overflow-y: scroll;
-    justify-content: space-between;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  height: 300px;
+  overflow-y: scroll;
+  justify-content: space-between;
 }
 
 .userPseudo {
-    display: flex;
-    height: 100px;
+  display: flex;
+  height: 100px;
 }
 
 .deleteUser {
-    margin-left: 50px;
+  margin-left: 50px;
 }

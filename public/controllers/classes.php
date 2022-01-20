@@ -45,6 +45,7 @@ class ToDoList {
     public int $id;
     public string $name;
     public int $creatorID;
+    public string $creatorName;
 
     public $collaborators = [];
 
@@ -54,6 +55,8 @@ class ToDoList {
         $this->id = $id;
         $this->name = $name;
         $this->creatorID = $creatorID;
+        $creatorInfos=GetInfosUser(null, $this->creatorID);
+        $this->creatorName = $creatorInfos[0]["name"];
         $this->collaborators = getCollabs($this->id);
     }
 

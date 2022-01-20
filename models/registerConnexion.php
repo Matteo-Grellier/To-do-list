@@ -1,13 +1,12 @@
 <?php
 
-// include 'utils.php';
-
-function register(string $emailEntry, string $passwordEntry, string $nameEntry){
+function register(string $emailEntry, string $passwordEntry, string $nameEntry):int{
 
     $bd = openDataBase();
 
     if(checkEmail($emailEntry)){
-        echo "ERREUR : L'EMAIL EST DÉJÀ PRÉSENT DANS LA BASE DE DONNÉES.\n";
+        return 2;
+        // echo "ERREUR : L'EMAIL EST DÉJÀ PRÉSENT DANS LA BASE DE DONNÉES.\n";
     } else{
         $statement = $bd->prepare('INSERT INTO user (email, password, name) VALUES (:emailEntry, :passwordEntry, :nameEntry)');
     
@@ -18,9 +17,11 @@ function register(string $emailEntry, string $passwordEntry, string $nameEntry){
         $result = $statement->execute();
 
         if($result ===FALSE){
-            echo "la requête n'a pas fonctionné\n";
+            return 1;
+            // echo "la requête n'a pas fonctionné\n";
         } else{
-            echo "L'utilisateur a bien été ajouté\n";
+            return 0;
+            // echo "L'utilisateur a bien été ajouté\n";
         }
         $statement->close();
     }
@@ -28,7 +29,6 @@ function register(string $emailEntry, string $passwordEntry, string $nameEntry){
     $bd=null;
 }
 
-// register("olivia@gmail.com", "olivia", "Olivia Jaguelin");
 
 function connexion(string $emailConnexion, string $passwordConnexion):int{
     $bd = openDataBase();
@@ -53,34 +53,5 @@ function connexion(string $emailConnexion, string $passwordConnexion):int{
     }
     $bd =null;
 }
-function GetInfosUser(string $emailUser){
-    $database = openDatabase();
-
-    // récuperer les données 
-    $sql = "SELECT ID, email, name FROM user WHERE email=:emailUser;";
-    $reponse = $database->prepare($sql);
-    $reponse->bindValue(':emailUser', $emailUser, SQLITE3_TEXT);
-    $result = $reponse->execute();
-
-    //si la request a fonctionné, remplir un tableau avec les resultats
-    if ($reponse === FALSE) {
-        echo "echec de la request";
-    } else {
-        // echo "tâches obtenues";
-        
-        $data = array();
-
-        while($test = $result->fetchArray(1)) {
-            array_push($data, $test);
-        }
-    }
-
-    // Deconnexion de la bdd
-    $database = null;
-
-    return $data;
-}
-// connexion("olivia@gmail.com", "1234");
-
 
 ?>

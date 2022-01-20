@@ -37,7 +37,7 @@ $choosenTodo = null;
                     <?php for($i = 0; $i < count($sessionUser->sharedTodoList); ++$i): ?>
                         <li id=<?= $sessionUser->sharedTodoList[$i]->id ?>>
                             <a href="home?id=<?= $sessionUser->sharedTodoList[$i]->id?>">↳<?=$sessionUser->sharedTodoList[$i]->name ?></a>
-                            <span class="shared-owner">by <?=$sessionUser->sharedTodoList[$i]->creatorID //il faudra mettre creatorName?></span>
+                            <span class="shared-owner">by <?=$sessionUser->sharedTodoList[$i]->creatorName //il faudra mettre creatorName?></span>
                         </li>
                     <?php endfor; ?>
                     
@@ -97,6 +97,7 @@ $choosenTodo = null;
                     <H3><?= count($choosenTodo->tasks) ?></H3>
                     <?php foreach($choosenTodo->tasks as $task): ?>
                         <div class="one-task">
+                            <div class="one-task-comp">
                             <form action="./public/controllers/index.php?id=<?=$task->id?>" method="post">
                                 <button class="checkbox" type="submit" name="isDone" value="<?=!$task->isDone?>">
                                     <?php if($task->isDone): ?>
@@ -106,6 +107,7 @@ $choosenTodo = null;
                             </form>
 
                             <h3><?=$task->name?></h3>
+                            </div>
                             <form action="./public/controllers/index.php" method="post" class="delete">
                                 <button class="delete-button" type="submit" name="delete" value="<?=$task->id?>">
                                     <img src="public\static\img\bin-light-red.png" width="40px"></img>
