@@ -34,9 +34,11 @@
     <h1>TooDoux</h1>
 </div>
 <div class="user-element" onclick="location.href='./login'" style="cursor: pointer">
-    <h3>
-        NOM Prénom
-    </h3>
+    <?php if(isset($_SESSION['name'])): ?>
+        <h3>
+            <?php echo $_SESSION['name']?>
+        </h3>
+    <?php endif; ?>
     <img  src="public/static/img/person-icon.png">
 </div>
 

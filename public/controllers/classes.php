@@ -1,5 +1,9 @@
 <?php
-include '../../models/utils.php';
+    session_start();
+    include '../../models/utils.php';
+?>
+<?php
+
 require("../../models/getinfos.php"); 
 
 class User {

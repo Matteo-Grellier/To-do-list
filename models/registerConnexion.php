@@ -28,30 +28,58 @@ function register(string $emailEntry, string $passwordEntry, string $nameEntry){
     $bd=null;
 }
 
-register("olivia@gmail.com", "olivia", "Olivia Jaguelin");
+// register("olivia@gmail.com", "olivia", "Olivia Jaguelin");
 
-function connexion(string $emailConnexion, string $passwordConnexion){
+function connexion(string $emailConnexion, string $passwordConnexion):int{
     $bd = openDataBase();
 
     if(checkEmail($emailConnexion)){
-        echo "Compte trouvé !\n";
         $statement = $bd->prepare("SELECT password FROM user WHERE email = :emailConnexion");
         $statement->bindValue(':emailConnexion', $emailConnexion);
         $result = $statement->execute();
     
         if(($result->fetchArray())[0] == $passwordConnexion){
-            echo "Vous êtes connectés\n";
+            //Connecté
+            return 0;
         } else{
-            echo "MOT DE PASSE INCORRECT\n";
+            //Mot de passe incorrect
+            return 1;
         }
         $statement->close();
     
     } else{
-        echo "Error: Ce mail est introuvable\n";
+        // Email incorrect
+        return 2;
     }
     $bd =null;
 }
+function GetInfosUser(string $emailUser){
+    $database = openDatabase();
 
+    // récuperer les données 
+    $sql = "SELECT ID, email, name FROM user WHERE email=:emailUser;";
+    $reponse = $database->prepare($sql);
+    $reponse->bindValue(':emailUser', $emailUser, SQLITE3_TEXT);
+    $result = $reponse->execute();
+
+    //si la request a fonctionné, remplir un tableau avec les resultats
+    if ($reponse === FALSE) {
+        echo "echec de la request";
+    } else {
+        // echo "tâches obtenues";
+        
+        $data = array();
+
+        while($test = $result->fetchArray(1)) {
+            array_push($data, $test);
+        }
+    }
+
+    // Deconnexion de la bdd
+    $database = null;
+
+    return $data;
+}
 // connexion("olivia@gmail.com", "1234");
 
 

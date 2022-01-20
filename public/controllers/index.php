@@ -3,6 +3,14 @@
     require("../controllers/classes.php");
     require("../../models/tasks.php");
     require("../../models/todolist.php"); 
+?>
+<?php
+    if(isset($_SESSION['ID'])){
+        $sessionUser = new User($_SESSION['ID'], $_SESSION['name'], $_SESSION['email']);
+    } else{
+        header("Location:./login");
+        // $sessionUser = new User(1, "berber", "ber@gmail.com");
+    }
 
     // require("../controllers/index.php"); 
 
@@ -84,7 +92,6 @@
 
     // require("../../models/getinfos.php");
 
-    $sessionUser = new User(3, "Bernard", "berber@ymail.com");
 
     // $getTodoList = function($id) use ($sessionUser) {
     //     // require("./classes.php");

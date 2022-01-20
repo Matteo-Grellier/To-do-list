@@ -2,3 +2,5 @@
 nocommit/
 public/static/js
 public/static/.vscode/
+models/todoDatabase.sqlite3
+nocommit/
