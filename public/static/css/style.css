@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&family=Press+Start+2P&display=swap');
+
+:root {
+    /* COLOR */
+    --main-blue: #6FCBED;
+    --dark-blue: #2F3B47;
+    --bg-gray: #F4F4F4;
+    --light-red: #F9615C;
+    --light-green: #BCFFA5;
+}
+
+body {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-blue);
+    color: var(--dark-blue);
+}
+
+.logo-element, .user-element {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-element {
+    margin-right: 20px;
+}
+
+.user-element img {
+    height: 70px;
+    width: auto;
+    margin-left: 10px;
+}
+
+/* MAIN */
+
+main {
+    min-height: 90vh;
+    background-color: var(--bg-gray);
+}
+
+/* FOOTER */
+
+footer {
+    height: 200px;
+    background-color: var(--dark-blue);
+    color: var(--bg-gray);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+footer div h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+footer div h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 2px;
+}
+
