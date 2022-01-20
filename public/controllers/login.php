@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['name'] = $userInfos[0]["name"];
             $_SESSION['ID'] = $userInfos[0]["ID"];
             $_SESSION['email'] = $userInfos[0]["email"];
-            header("Location:../../home");
+            header("Location:./home");
 
         } else{
             header("Location:./login". "?Erreur=" . $Erreur);
