@@ -42,7 +42,7 @@
                     <?php if($_GET["registered"]==1):?>
                         <div class="errors" >Problème lié au serveur, l'inscription n'a pas fonctionné.</div>
                     <?php elseif($_GET["registered"]==2):?>
-                        <div class="errors">Cet mail existe déjà.</div>
+                        <div class="errors">Cet email existe déjà.</div>
                     <?php else: ?>
                         <div class="registered">Vous avez bien été enregistré.</div>
                     <?php endif; ?>
