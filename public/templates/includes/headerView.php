@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div class="logo-element" onclick="location.href='/'">
+<div class="logo-element" onclick="location.href='./home'" style="cursor: pointer">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 1000 1000">
         <defs>
             <style>
@@ -33,15 +33,13 @@
     </svg>
     <h1>TooDoux</h1>
 </div>
-<div class="user-element">
-    <h3>
-        NOM Prénom
-    </h3>
-    <a href="/login">
+<div class="user-element" onclick="location.href='./login'" style="cursor: pointer">
+    <?php if(isset($_SESSION['name'])): ?>
+        <h3>
+            <?php echo $_SESSION['name']?>
+        </h3>
+    <?php endif; ?>
     <img  src="public/static/img/person-icon.png">
-
-
-    </a>
 </div>
 
 <?php $headerContent = ob_get_clean(); ?>

@@ -3,6 +3,29 @@ body {
     font-family: 'Montserrat';
 }
 
+.deconnexion-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deconnexion-btn button {
+    transition: all 0.5s ease-in-out;
+    margin-top: 240px;
+    background: var(--dark-blue);
+    border: none;
+    font-family: "Montserrat";
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--bg-gray);
+}
+
+.deconnexion-btn button:hover {
+    background: var(--main-blue);
+
+}
+
 .connexion {
     min-height: 100vh;
     display: flex;
@@ -14,28 +37,25 @@ body {
     visibility: hidden;
 }
 
-.alreadyRegistered {
-    color: white !important;
+.alreadyRegistered, .createAccount {
+    color: var(--bg-gray) !important;
+    padding-right: 200px;
 }
 
-#eye {
-    display: none;
-}
+.alreadyRegistered:hover, .createAccount:hover {
+    color: var(--main-blue) !important;
 
-#slash {
-    display: initial;
 }
 
 .login-form {
-    position: relative;
-    left: 35px;
-    top: 70px;
     width: calc(100% - 20px);
     max-width: 500px;
-    height: 650px;
-    background-color: #2F3B47;
+    background-color: var(--dark-blue);
     padding: 0px 40px;
-    border-radius: 10%;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login-form h1 {
@@ -50,18 +70,19 @@ body {
 .textb {
     margin-bottom: 12px;
     position: relative;
+    width: 400px;
 }
 
 .textb input {
-    width: 80%;
-    height: 70px;
-    border: none;
-    background-color: #ededed;
-    border-radius: 4px;
-    color: #333;
+    width: 100%;
+    height: 50px;
+    border: 3px solid var(--main-blue);
+    background-color: var(--bg-gray);
+    border-radius: 15px;
+    color: rgb(82, 82, 82);
     font-size: 18px;
     font-weight: 700;
-    padding: 14px 60px 0 10px;
+    padding:10px 2px;
 }
 
 .placeholder {
@@ -105,7 +126,7 @@ body {
     color: #555;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
     transition: .2s linear;
 }
 
@@ -113,33 +134,35 @@ body {
     color: #111;
 }
 
-.button_login a {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-size: 24px;
-    overflow: hidden;
-    transition: 0.2s;
-    /* margin-left: 800px; */
-    top: -100px;
-    left: 220px;
-    z-index: 500;
+.button_login {
+    font-family: "Montserrat";
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: var(--bg-gray);
 }
 
-.button_login a i {
-    position: relative;
-    top: 3px;
-}
-
-.button_login a span {
-    position: absolute;
-    display: block;
+.button_login:hover {
+    color: var(--main-blue);
 }
 
 .erreurs {
     z-index: 500;
+}
+
+.btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: "Montserrat";
+    font-size: 4vh;
+    color: var(--bg-gray);
+}
+
+.btn:hover {
+    color: var(--main-blue);
+}
+
+.LogReg {
+    display: flex;
 }
